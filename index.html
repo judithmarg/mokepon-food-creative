@@ -4,9 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MOKEPON game</title>
+    <script src="./js/mokepon.js"></script>
 </head>
 <body>
+    <h1>MOKEPON 🍕🍔🍟</h1>
+    <section id="seleccionar-food">
+        <h2>Elige tu comida:</h2>
+
+        <label for="pizzate">Pizzate</label>
+        <input type="radio" name="food" id="pizzate">
+
+        <label for="hamburgui">Hamburgui</label>
+        <input type="radio" name="food" id="hamburgui">
+        
+        <label for="frenchpapas">French Papas</label>
+        <input type="radio" name="food" id="frenchpapas">
+        
+        <button id="boton-comida">Seleccionar</button>
+    </section>
+    <section id="seleccionar-attack">
+        <h2>Elige tu ataque:</h2>
+        <p>Tu comida <span id="comida-player"></span> tiene <span>3</span> vidas</p>
+        <p>La comida <span id="comida-oponente"></span> del enemigo tiene <span>3</span> vidas</p>
+        <button id="boton-dormir">Dormir💤</button>
+        <button id="boton-caer">Caer🕳</button>
+        <button id="boton-explocion">Explosion 💥</button>
+    </section>
+    <section id="mensajes">
+        <p>Tu comida atacó con, la comida del enemigo ataco con - GANASTE</p>
+    </section>
+    <section id="reiniciar">
+        <button id="boton-reiniciar">Reiniciar</button>
+    </section>
     
 </body>
 </html>
