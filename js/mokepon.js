@@ -12,6 +12,9 @@ function iniciarJuego() {
     botonCaer.addEventListener('click', ataqueCaer)
     let botonExplosion = document.getElementById('boton-explosion')
     botonExplosion.addEventListener('click',ataqueExplosion)
+
+    let botonReiniciar = document.getElementById('boton-reiniciar')
+    botonReiniciar.addEventListener('clcik', reiniciarJuego)
 }
 
 function seleccionarComidaPlayer(){
@@ -76,10 +79,16 @@ function combate(){
     let spanVidasOponente = document.getElementById('vidas-oponente')
     if(ataqueJugador == 'DORMIR, Le hizo dormir' && ataqueEnemigo == 'DORMIR, Te hizo dormir'){
         crearMensaje('EMPATE')
+        spanVidasOponente.innerHTML = vidasOponente
+        spanVidasJugador.innerHTML = vidasJugador
     }else if(ataqueJugador == 'CAER, Lo empujó' && ataqueEnemigo == 'CAER, Te empujó'){
         crearMensaje('EMPATE')
+        spanVidasOponente.innerHTML = vidasOponente
+        spanVidasJugador.innerHTML = vidasJugador
     }else if(ataqueJugador == 'EXPLOSION, Hizo una explosion' && ataqueEnemigo == 'EXPLOSION, Hizo una explosion'){
         crearMensaje('EMPATE')
+        spanVidasOponente.innerHTML = vidasOponente
+        spanVidasJugador.innerHTML = vidasJugador
     }else if(ataqueJugador == 'DORMIR, Le hizo dormir' && ataqueEnemigo == 'CAER, Te empujó'){
         crearMensaje('GANASTE')
         vidasOponente--
@@ -124,6 +133,18 @@ function crearMensajeFinal(resultado){
     parrafo.innerHTML = resultado
 
     sectionMensajes.appendChild(parrafo)
+
+    let botonDormir = document.getElementById('boton-dormir')
+    botonDormir.disabled = true
+    let botonCaer = document.getElementById('boton-caer')
+    botonCaer.disabled = true
+    let botonExplosion = document.getElementById('boton-explosion')
+    botonExplosion.disabled = true
+
+}
+
+function reiniciarJuego(){
+    location.reload()
 }
 
 function aleatorio(min, max){
