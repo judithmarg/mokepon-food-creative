@@ -1,5 +1,7 @@
 let ataqueJugador
 let ataqueEnemigo
+let vidasJugador  = 3
+let vidasOponente = 3
 
 function iniciarJuego() {
     let botonComidaPlayer = document.getElementById("boton-comida")
@@ -65,11 +67,65 @@ function ataqueAleatorioEnemigo(){
     }else{
         ataqueEnemigo = 'EXPLOSION, Hizo una explosion'
     }
+
+    combate()
 }
 
-function crearMensaje(){
-    
+function combate(){
+    let spanVidasJugador = document.getElementById('vidas-jugador')
+    let spanVidasOponente = document.getElementById('vidas-oponente')
+    if(ataqueJugador == 'DORMIR, Le hizo dormir' && ataqueEnemigo == 'DORMIR, Te hizo dormir'){
+        crearMensaje('EMPATE')
+    }else if(ataqueJugador == 'CAER, Lo empujó' && ataqueEnemigo == 'CAER, Te empujó'){
+        crearMensaje('EMPATE')
+    }else if(ataqueJugador == 'EXPLOSION, Hizo una explosion' && ataqueEnemigo == 'EXPLOSION, Hizo una explosion'){
+        crearMensaje('EMPATE')
+    }else if(ataqueJugador == 'DORMIR, Le hizo dormir' && ataqueEnemigo == 'CAER, Te empujó'){
+        crearMensaje('GANASTE')
+        vidasOponente--
+        spanVidasOponente.innerHTML = vidasOponente
+    }else if(ataqueJugador == 'EXPLOSION, Hizo una explosion' && ataqueEnemigo == 'DORMIR, Te hizo dormir'){
+        crearMensaje('GANASTE')
+        vidasOponente--
+        spanVidasOponente.innerHTML = vidasOponente
+    }else if(ataqueJugador == 'CAER, Lo empujó' && ataqueEnemigo == 'EXPLOSION, Hizo una explosion'){
+        crearMensaje('GANASTE')
+        vidasOponente--
+        spanVidasOponente.innerHTML = vidasOponente
+    }else {
+        crearMensaje('PERDISTE')
+        vidasJugador--
+        spanVidasJugador.innerHTML = vidasJugador
+    }
+    revisarVidas()
 }
+
+function revisarVidas(){
+    if(vidasOponente == 0){
+        crearMensajeFinal('FELICIDADES GANASTE!!!')
+    }else if(vidasJugador == 0){
+        crearMensajeFinal('PERDISTE, SUERTE PARA LA PROXIMA!')
+    }
+}
+
+function crearMensaje(resultado){
+    let sectionMensajes = document.getElementById('mensajes')
+
+    let parrafo = document.createElement('p')
+    parrafo.innerHTML = 'Tu comida atacó con '+ataqueJugador+', la comida del enemigo ataco con '+ataqueEnemigo+'-'+resultado
+
+    sectionMensajes.appendChild(parrafo)
+}
+
+function crearMensajeFinal(resultado){
+    let sectionMensajes = document.getElementById('mensajes')
+
+    let parrafo = document.createElement('h3')
+    parrafo.innerHTML = resultado
+
+    sectionMensajes.appendChild(parrafo)
+}
+
 function aleatorio(min, max){
     return Math.floor(Math.random() * (max-min +1) + min)
 }
