@@ -1,3 +1,13 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        rgba(105, 53, 202, 0.753) 50%,
+        rgba(194, 62, 194, 0.342) 100%
+    );
+}
+
 .titulo{
     color: lightcyan;
     width: 310px;
@@ -5,3 +15,24 @@
     background-color: teal;
 }
 
+#seleccionar-food{
+    display: flex;
+    width: 50vh;
+    height: 50vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(207, 110, 207, 0.774);
+    padding: 30px;
+    border: 3px solid darkorchid;
+    border-radius: 5px;
+}
+
+.tarjeta-de-mokepon{
+    width: 100px;
+    height: 100px;
+    /*background: aquamarine;*/
+    padding: 10px;
+    box-sizing: border-box;
+    margin:10px;
+}
