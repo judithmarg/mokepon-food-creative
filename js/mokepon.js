@@ -4,8 +4,15 @@ let vidasJugador  = 3
 let vidasOponente = 3
 
 function iniciarJuego() {
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-attack')
+    sectionSeleccionarAtaque.style.display='none'
+
+    let sectionSeleccionarReiniciar = document.getElementById('reiniciar')
+    sectionSeleccionarReiniciar.style.display='none'
+
     let botonComidaPlayer = document.getElementById("boton-comida")
     botonComidaPlayer.addEventListener('click', seleccionarComidaPlayer)
+
     let botonDormir = document.getElementById('boton-dormir')
     botonDormir.addEventListener('click', ataqueDormir)
     let botonCaer = document.getElementById('boton-caer')
@@ -14,10 +21,16 @@ function iniciarJuego() {
     botonExplosion.addEventListener('click',ataqueExplosion)
 
     let botonReiniciar = document.getElementById('boton-reiniciar')
-    botonReiniciar.addEventListener('clcik', reiniciarJuego)
+    botonReiniciar.addEventListener('click', reiniciarJuego)
 }
 
 function seleccionarComidaPlayer(){
+    let sectionSeleccionarComida = document.getElementById('seleccionar-food')
+    sectionSeleccionarComida.style.display='none'
+
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-attack')
+    sectionSeleccionarAtaque.style.display='block'
+
     let inputPizza = document.getElementById('pizzate')
     let inputHambur = document.getElementById('hamburgui')
     let inputFrench = document.getElementById('frenchpapas')
@@ -141,6 +154,8 @@ function crearMensajeFinal(resultado){
     let botonExplosion = document.getElementById('boton-explosion')
     botonExplosion.disabled = true
 
+    let sectionSeleccionarReiniciar = document.getElementById('reiniciar')
+    sectionSeleccionarReiniciar.style.display='block'
 }
 
 function reiniciarJuego(){
