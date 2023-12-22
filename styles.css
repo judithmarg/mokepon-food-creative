@@ -1,38 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Inter:wght@200&display=swap');
+
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(
-        rgba(105, 53, 202, 0.753) 50%,
-        rgba(194, 62, 194, 0.342) 100%
+        rgb(255, 144, 188) 25%,
+        rgb(255, 192, 217) 40%,
+        rgb(249, 249, 224) 70%,
+        rgb(138, 205, 215) 100%
     );
-}
-
-.titulo{
-    color: lightcyan;
-    width: 310px;
-    height: 50px;
-    background-color: teal;
+    font-family: 'Cookie', cursive;
+    font-size: 1.5rem;
 }
 
 #seleccionar-food{
     display: flex;
-    width: 50vh;
-    height: 50vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(207, 110, 207, 0.774);
+    background-color: #742b4850;
     padding: 30px;
-    border: 3px solid darkorchid;
-    border-radius: 5px;
+    border-radius: 20px;
+}
+
+.titulo{
+    color: white;
+    font-size: 5rem;
+}
+.subtitulo{
+    color: white;
+    font-size: 3rem;
+}
+
+.tarjetas{
+    display: flex;
+    gap: 10px;
 }
 
 .tarjeta-de-mokepon{
-    width: 100px;
-    height: 100px;
-    /*background: aquamarine;*/
+    width: 150px;
+    height: 150px;
+    background: #FFC0D9;
     padding: 10px;
     box-sizing: border-box;
     margin:10px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.tarjeta-de-mokepon img {
+    width: 100px;
+    height: 100px;
 }

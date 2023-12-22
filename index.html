@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,21 +9,34 @@
     <script src="./js/mokepon.js"></script>
     <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body style="height:100vh;">
     <section id="seleccionar-food">
-        <h1 id='titulo' class="titulo">MOKEPON 🍕🍔🍟</h1>
+        <h1 id='titulo' class="titulo">Mokepon🍕🍔🍟</h1>
 
-        <h2>Elige tu comida:</h2>
+        <h2 class="subtitulo">Elige tu comida:</h2>
 
-        <label class='tarjeta-de-mokepon' for="pizzate">Pizzate</label>
-        <input type="radio" name="food" id="pizzate">
+        <div class="tarjetas">
+            <label class='tarjeta-de-mokepon' for="pizzate">
+                Pizzate
+                <img src="./images/pizza.png" alt="pizzate cute">
+            </label>
+            <input type="radio" name="food" id="pizzate">
 
-        <label class='tarjeta-de-mokepon' for="hamburgui">Hamburgui</label>
-        <input type="radio" name="food" id="hamburgui">
-        
-        <label class='tarjeta-de-mokepon' for="frenchpapas">French Papas</label>
-        <input type="radio" name="food" id="frenchpapas">
-        
+            <label class='tarjeta-de-mokepon' for="hamburgui">
+                Hamburgui
+                <img src="./images/hamburguesa.png" alt="hamburgui cute">
+            </label>
+            <input type="radio" name="food" id="hamburgui">
+
+            <label class='tarjeta-de-mokepon' for="frenchpapas">
+                French Papas
+                <img src="./images/papas-fritas.png" alt="french papas cute">
+            </label>
+            <input type="radio" name="food" id="frenchpapas">
+        </div>
+
+
         <button id="boton-comida">Seleccionar</button>
     </section>
     <section id="seleccionar-attack">
@@ -41,8 +55,7 @@
         <h1 id='titulo' class="titulo">MOKEPON 🍕🍔🍟</h1>
         <button id="boton-reiniciar">Reiniciar</button>
     </section>
-    
+
 </body>
+
 </html>
-
-
